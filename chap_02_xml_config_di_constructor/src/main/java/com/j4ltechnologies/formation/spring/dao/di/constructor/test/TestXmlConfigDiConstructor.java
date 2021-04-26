@@ -14,14 +14,7 @@ import java.util.Arrays;
  */
 public class TestXmlConfigDiConstructor {
     public static void main(String[] args) {
-        try (AbstractApplicationContext context = new ClassPathXmlApplicationContext("XmlConfigDiConstructor.xml")) {
-            // Nombre de beans dans le context de Spring
-            int nbBeans = context.getBeanDefinitionCount();
-            System.out.printf("NB Beans = %d\n", nbBeans);
-
-            //Lister les Beans par leur nom
-            var listBeans = context.getBeanDefinitionNames();
-            System.out.println(Arrays.toString(listBeans));
+        try (var context = new ClassPathXmlApplicationContext("XmlConfigDiConstructor.xml")) {
 
             CompteService service = (CompteService) context.getBean("compteService");
 

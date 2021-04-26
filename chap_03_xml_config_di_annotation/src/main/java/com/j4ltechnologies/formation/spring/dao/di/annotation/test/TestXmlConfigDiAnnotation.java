@@ -7,21 +7,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.util.Arrays;
 
 /**
- * Classe XmlConfigDiAnnotation, créée le 26/04/2021 à 19:23
+ * Classe TestXmlConfigDiAnnotation, créée le 26/04/2021 à 19:23
  *
  * @author Joachim Zadi
  * @version 1.0 du 26/04/2021
  */
-public class XmlConfigDiAnnotation {
+public class TestXmlConfigDiAnnotation {
     public static void main(String[] args) {
-        try (AbstractApplicationContext context = new ClassPathXmlApplicationContext("XmlConfigDiAnnotation.xml")) {
-            // Nombre de beans dans le context de Spring
-            int nbBeans = context.getBeanDefinitionCount();
-            System.out.printf("NB Beans = %d\n", nbBeans);
-
-            //Lister les Beans par leur nom
-            var listBeans = context.getBeanDefinitionNames();
-            System.out.println(Arrays.toString(listBeans));
+        try (var context = new ClassPathXmlApplicationContext("XmlConfigDiAnnotation.xml")) {
 
             CompteService service = (CompteService) context.getBean("compteService");
 
