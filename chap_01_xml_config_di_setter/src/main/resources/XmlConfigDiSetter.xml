@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Creation des Beans Compte dans le context de Spring-->
+    <bean id="compte1" class="com.j4ltechnologies.formation.spring.domains.Compte">
+        <property name="numero" value="1"/>
+        <property name="titulaire" value="Victor"/>
+        <property name="solde" value="1500"/>
+        <property name="fermer" value="false"/>
+    </bean>
+    <bean id="compte2" class="com.j4ltechnologies.formation.spring.domains.Compte">
+        <property name="numero" value="2"/>
+        <property name="titulaire" value="Adelie"/>
+        <property name="solde" value="1000"/>
+        <property name="fermer" value="false"/>
+    </bean>
+    <bean id="compte3" class="com.j4ltechnologies.formation.spring.domains.Compte">
+        <property name="numero" value="3"/>
+        <property name="titulaire" value="Julie"/>
+        <property name="solde" value="500"/>
+        <property name="fermer" value="false"/>
+    </bean>
+
+    <!--Creation du Bean compteRepository dans le context de Spring-->
+    <bean id="compteRepository" class="com.j4ltechnologies.formation.spring.dao.di.setter.CompteRepository">
+        <property name="comptes">
+            <map>
+                <!--Injection de la dependance du compte1-->
+                <entry key="1" value-ref="compte1"/>
+                <!--Injection de la dependance du compte2-->
+                <entry key="2" value-ref="compte2"/>
+                <!--Injection de la dependance du compte3-->
+                <entry key="3" value-ref="compte3"/>
+            </map>
+        </property>
+    </bean>
+
+    <!--Creation du Bean compteService dans le context de Spring-->
+    <bean id="compteService" class="com.j4ltechnologies.formation.spring.dao.di.setter.CompteService">
+        <!--Injection de la dependance du compteRepository-->
+        <property name="compteRepository" ref="compteRepository"/>
+    </bean>
+</beans>

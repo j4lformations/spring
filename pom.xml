@@ -9,6 +9,7 @@
     <version>1.0</version>
     <modules>
         <module>chap_00_base</module>
+        <module>chap_01_xml_config_di_setter</module>
     </modules>
 
     <packaging>pom</packaging>
