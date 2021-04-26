@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>chap_01_xml_config_di_setter</artifactId>
+    <artifactId>chap_02_xml_config_di_constructor</artifactId>
 
     <dependencies>
         <dependency>
@@ -21,6 +21,7 @@
             <groupId>com.j4ltechnologies.formation.spring</groupId>
             <artifactId>chap_00_base</artifactId>
             <version>1.0</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

@@ -10,6 +10,7 @@
     <modules>
         <module>chap_00_base</module>
         <module>chap_01_xml_config_di_setter</module>
+        <module>chap_02_xml_config_di_constructor</module>
     </modules>
 
     <packaging>pom</packaging>
