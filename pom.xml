@@ -13,6 +13,7 @@
         <module>chap_02_xml_config_di_constructor</module>
         <module>chap_03_xml_config_di_annotation</module>
         <module>chap_04_java_config</module>
+        <module>chap_05_jpa_sans_spring</module>
     </modules>
 
     <packaging>pom</packaging>
