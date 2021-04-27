@@ -4,24 +4,39 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PostLoad;
+import javax.persistence.PostPersist;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
+import javax.persistence.Transient;
+
+import com.j4ltechnologies.formation.spring.utils.JpaUtils;
 
 @Entity
 public class Artiste {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@Column(nullable = false)
+	@Column(nullable = false, length = 25)
 	private String prenom;
+	
+	@Column(nullable = false, length = 20)
 	private String nom;
 
-	@Column(unique = true)
+	@Column(unique = true, nullable = false)
 	private String email;
 
 	@Column(length = 2000)
 	private String bio;
+	
 	private LocalDate ddn;
+	
+	@Transient
 	private int age;
 
 	public Artiste(Integer id, String prenom, String nom, String email, String bio, LocalDate ddn) {
@@ -31,10 +46,6 @@ public class Artiste {
 		this.email = email;
 		this.bio = bio;
 		this.ddn = ddn;
-	}
-
-	public Artiste(Integer id, String prenom, String nom, String email, LocalDate ddn) {
-		this(id, prenom, nom, email, "", ddn);
 	}
 	
 	public Artiste(String prenom, String nom, String email, LocalDate ddn) {
@@ -101,5 +112,17 @@ public class Artiste {
 	public void setAge(int age) {
 		this.age = age;
 	}
-
+	
+	@PrePersist
+	@PreUpdate
+	protected void avantPersistOrMerge() {
+		prenom = JpaUtils.capitalize(prenom);
+		email = email.trim().toLowerCase();
+		nom = nom.trim().toUpperCase();
+	}
+	
+	@PostLoad
+	protected void apresChargement() {
+		age = JpaUtils.calculeAge(ddn);
+	}
 }
