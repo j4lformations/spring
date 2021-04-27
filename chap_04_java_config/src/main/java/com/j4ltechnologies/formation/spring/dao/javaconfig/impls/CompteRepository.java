@@ -1,23 +1,32 @@
-package com.j4ltechnologies.formation.spring.dao.di.setter;
+package com.j4ltechnologies.formation.spring.dao.javaconfig.impls;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
+import org.springframework.stereotype.Component;
 
 import com.j4ltechnologies.formation.spring.dao.ICompteRepository;
 import com.j4ltechnologies.formation.spring.domains.Compte;
 
-import java.util.*;
-
-/**
- * Classe CompteRepository, créée le 26/04/2021 à 18:18
- *
- * @author Joachim Zadi
- * @version 1.0 du 26/04/2021
- */
-public class CompteRepository implements ICompteRepository {
-    
+@Component
+public class CompteRepository implements ICompteRepository{
+	
 	private Map<Integer, Compte> comptes = new HashMap<>();
 
-    // Injection de dependance par setter
-    public void setComptes(Map<Integer, Compte> comptes) {
-        this.comptes = comptes;
+    // Initialisation de la map comptes via un bloc d'initialisation
+    {
+        Compte compte1 = new Compte(1, "Victor", 10.0);
+        comptes.put(1, compte1);
+
+        Compte compte2 = new Compte(2, "Adélie", 30.0);
+        comptes.put(2, compte2);
+
+        Compte compte3 = new Compte(3, "Julie", 50.0);
+        comptes.put(3, compte3);
     }
 
     @Override

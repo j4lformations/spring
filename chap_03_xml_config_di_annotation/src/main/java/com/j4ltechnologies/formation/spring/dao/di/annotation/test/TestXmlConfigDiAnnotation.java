@@ -1,10 +1,8 @@
 package com.j4ltechnologies.formation.spring.dao.di.annotation.test;
 
-import com.j4ltechnologies.formation.spring.dao.di.annotation.CompteService;
-import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.Arrays;
+import com.j4ltechnologies.formation.spring.dao.di.annotation.CompteService;
 
 /**
  * Classe TestXmlConfigDiAnnotation, créée le 26/04/2021 à 19:23

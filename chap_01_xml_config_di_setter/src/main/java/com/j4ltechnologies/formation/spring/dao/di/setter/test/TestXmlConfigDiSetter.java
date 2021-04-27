@@ -23,7 +23,7 @@ public class TestXmlConfigDiSetter {
             var listBeans = context.getBeanDefinitionNames();
             System.out.println(Arrays.toString(listBeans));
 
-            CompteService service = (CompteService) context.getBean("compteService");
+            CompteService service = context.getBean(CompteService.class);
 
             System.out.println("\nAVANT LE TRANSFERT\n");
             System.out.printf("s1 = %s\n", service.getCompte(1).getSolde());

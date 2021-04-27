@@ -69,4 +69,9 @@ public class Compte {
     public void setFermer(Boolean fermer) {
         this.fermer = fermer;
     }
+
+	@Override
+	public String toString() {
+		return "Compte [" + numero + ", " + titulaire + ", " + solde + "€]";
+	}
 }
