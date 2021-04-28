@@ -4,27 +4,20 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class Adresse {
+public class Adresse extends AbstractEntity{
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
 	private String libelle;
 
-	@OneToMany
-	@JoinColumn(name = "adresseId")
-	private Set<Artiste> artistes;
+//	@OneToMany
+//	@JoinColumn(name = "adresseId")
+//	private Set<Artiste> artistes;
 
 	public Adresse() {
 
 	}
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
+	public Adresse(String libelle) {
+		this.libelle = libelle;
 	}
 
 	public String getLibelle() {

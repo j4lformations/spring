@@ -7,12 +7,13 @@
 	<persistence-unit name="MYSQL_ASTON_PU" transaction-type="RESOURCE_LOCAL">
 		<class>com.j4ltechnologies.formation.spring.entites.Artiste</class>
 		<class>com.j4ltechnologies.formation.spring.entites.Adresse</class>
+		<class>com.j4ltechnologies.formation.spring.entites.Album</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/db_aston" />
 			<property name="javax.persistence.jdbc.user" value="root" />
 			<property name="javax.persistence.jdbc.password" value="" />
-			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+			<property name="javax.persistence.schema-generation.database.action" value="none"/>
 			<property name="hibernate.show_sql" value="true"/>
 		</properties>
 	</persistence-unit>

@@ -1,6 +1,7 @@
 package com.j4ltechnologies.formation.spring.entites;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,11 +10,7 @@ import javax.persistence.*;
 import com.j4ltechnologies.formation.spring.utils.JpaUtils;
 
 @Entity
-public class Artiste {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+public class Artiste extends AbstractEntity{
 
 	@Column(nullable = false, length = 25)
 	private String prenom;
@@ -31,21 +28,22 @@ public class Artiste {
 	
 	@Transient
 	private int age;
-//
-//	@ManyToOne
-//	private Adresse adresse;
+
+	@ManyToOne(cascade = CascadeType.PERSIST)
+	private Adresse adresse;
+
+	@ManyToMany
+	private List<Album> albums;
 
 	// Obligatoire en JPA
 	public Artiste() {
-
 	}
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
+	public Artiste(String prenom, String nom, String email, LocalDate ddn) {
+		this.prenom = prenom;
+		this.nom = nom;
+		this.email = email;
+		this.ddn = ddn;
 	}
 
 	public String getPrenom() {
@@ -96,16 +94,16 @@ public class Artiste {
 		this.age = age;
 	}
 	
-//	public Adresse getAdresse() {
-//		return adresse;
-//	}
-//
-//	public void setAdresse(Adresse adresse) {
-//		this.adresse = adresse;
-//	}
+	public Adresse getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
 
 	@PrePersist
-	@PreUpdate
+	//@PreUpdate
 	protected void avantPersistOrMerge() {
 		prenom = JpaUtils.capitalize(prenom);
 		email = email.trim().toLowerCase();
