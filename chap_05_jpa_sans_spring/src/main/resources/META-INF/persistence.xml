@@ -8,6 +8,7 @@
 		<class>com.j4ltechnologies.formation.spring.entites.Artiste</class>
 		<class>com.j4ltechnologies.formation.spring.entites.Adresse</class>
 		<class>com.j4ltechnologies.formation.spring.entites.Album</class>
+		<class>com.j4ltechnologies.formation.spring.entites.AbstractEntity</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/db_aston" />

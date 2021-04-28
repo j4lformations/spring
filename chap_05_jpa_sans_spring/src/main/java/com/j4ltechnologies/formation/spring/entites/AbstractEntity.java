@@ -33,4 +33,7 @@ public abstract class AbstractEntity {
     public void setId(Integer id) {
         this.id = id;
     }
+    public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
 }

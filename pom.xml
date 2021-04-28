@@ -14,6 +14,7 @@
         <module>chap_03_xml_config_di_annotation</module>
         <module>chap_04_java_config</module>
         <module>chap_05_jpa_sans_spring</module>
+        <module>chap_06_spring_jpa_hbm</module>
     </modules>
 
     <packaging>pom</packaging>
