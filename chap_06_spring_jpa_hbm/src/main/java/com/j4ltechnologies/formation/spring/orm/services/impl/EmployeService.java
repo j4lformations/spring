@@ -15,15 +15,15 @@ import com.j4ltechnologies.formation.spring.orm.services.IEmployeService;
 public class EmployeService implements IEmployeService{
 
 	@Autowired
-	private IEmployeRepository employeRepository;
+	private IEmployeRepository repository;
 	
 	@Override
 	public List<Employe> allEmployes() {
-		return employeRepository.allEmployes();
+		return repository.allEmployes();
 	}
 
 	@Override
 	public Employe addEmploye(Employe employe) {
-		return employeRepository.addEmploye(employe);
+		return repository.addEmploye(employe);
 	}
 }

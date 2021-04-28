@@ -15,7 +15,7 @@ public class TestSpringHbm {
 			joachim.setPrenom("Joachim");
 			
 			Employe ludovic = new Employe();
-			ludovic.setPrenom("ludovic");
+			ludovic.setPrenom("Ludovic");
 			
 			IEmployeService service = context.getBean(EmployeService.class);
 			
