@@ -1,17 +1,10 @@
 package com.j4ltechnologies.formation.spring.entites;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.PostLoad;
-import javax.persistence.PostPersist;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 import com.j4ltechnologies.formation.spring.utils.JpaUtils;
 
@@ -38,19 +31,9 @@ public class Artiste {
 	
 	@Transient
 	private int age;
-
-	public Artiste(Integer id, String prenom, String nom, String email, String bio, LocalDate ddn) {
-		this.id = id;
-		this.prenom = prenom;
-		this.nom = nom;
-		this.email = email;
-		this.bio = bio;
-		this.ddn = ddn;
-	}
-	
-	public Artiste(String prenom, String nom, String email, LocalDate ddn) {
-		this(null, prenom, nom, email, "", ddn);
-	}
+//
+//	@ManyToOne
+//	private Adresse adresse;
 
 	// Obligatoire en JPA
 	public Artiste() {
@@ -113,6 +96,14 @@ public class Artiste {
 		this.age = age;
 	}
 	
+//	public Adresse getAdresse() {
+//		return adresse;
+//	}
+//
+//	public void setAdresse(Adresse adresse) {
+//		this.adresse = adresse;
+//	}
+
 	@PrePersist
 	@PreUpdate
 	protected void avantPersistOrMerge() {
