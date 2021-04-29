@@ -15,7 +15,7 @@
         <module>chap_04_java_config</module>
         <module>chap_05_jpa_sans_spring</module>
         <module>chap_06_spring_jpa_hbm</module>
-        <module>chap_07_spring_jpa_hbm_jee</module>
+        <module>chap_07_spring_hbm_jee</module>
         <module>chap_08_spring_mvc</module>
     </modules>
 
@@ -31,6 +31,9 @@
         <spring-data-jpa.version>2.5.0</spring-data-jpa.version>
         <hibernate.version>5.4.30.Final</hibernate.version>
         <mysql.version>8.0.24</mysql.version>
+        <testng.version>7.4.0</testng.version>
+        <junit.version>5.7.1</junit.version>
+        <lombok.version>1.18.20</lombok.version>
     </properties>
 
 </project>

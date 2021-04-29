@@ -106,6 +106,7 @@ class ArtisteTest {
 //        Query requete = em.createQuery("select a from Artiste a where a.prenom = :prenom and a.nom = :nom");
 //        requete.setParameter("prenom", "anas");
 //        requete.setParameter("nom", "faour");
+<<<<<<< Updated upstream
         TypedQuery<Artiste> requete = em
                 .createQuery("select a from Artiste a where a.prenom = :prenom and a.nom = :nom", Artiste.class);
 
@@ -113,6 +114,15 @@ class ArtisteTest {
 
         assertNotNull(requete.getSingleResult());
         assertEquals(requete.getSingleResult().getAge(), 17);
+=======
+        TypedQuery<Artiste> requete = em.createQuery("select a from Artiste a where a.prenom = :prenom and a.nom = :nom", Artiste.class);
+        requete
+                .setParameter("nom", "ezzouch")
+                .setParameter("prenom", "wiem");
+
+        assertNotNull(requete.getResultList().get(0));
+        assertEquals(requete.getResultList().get(0).getAge(), 17);
+>>>>>>> Stashed changes
     }
 
     @Test
