@@ -18,11 +18,10 @@ public interface IAuteurService {
     List<Livre> allLivres();
 
     Auteur findAuteur(Integer id);
+
     Auteur findAuteur(String prenom, String nom);
 
-    Auteur addAuteur(Auteur auteur, Livre livre);
-
-    Auteur updateAuteur(Auteur auteur, Livre livre);
+    void saveOrMajAuteur(Auteur auteur, Livre livre);
 
     void deleteAuteur(Integer integer);
 }

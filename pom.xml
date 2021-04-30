@@ -16,7 +16,7 @@
         <module>chap_05_jpa_sans_spring</module>
         <module>chap_06_spring_jpa_hbm</module>
         <module>chap_07_spring_hbm_jee</module>
-        <module>chap_08_spring_mvc</module>
+        <module>chap_08_crud_spring_hbm_mvc</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -27,7 +27,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <spring-framework.version>5.3.6</spring-framework.version>
+        <spring-framework.version>5.3.3</spring-framework.version>
         <spring-data-jpa.version>2.5.0</spring-data-jpa.version>
         <hibernate.version>5.4.30.Final</hibernate.version>
         <mysql.version>8.0.24</mysql.version>

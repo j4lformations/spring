@@ -5,11 +5,10 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.lang.NonNull;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.PrePersist;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * Classe Livre, créée le 29/04/2021 à 12:16

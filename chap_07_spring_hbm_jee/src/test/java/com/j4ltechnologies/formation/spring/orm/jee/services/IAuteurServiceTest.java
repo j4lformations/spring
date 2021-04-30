@@ -35,12 +35,12 @@ class IAuteurServiceTest {
         Livre livreJava = new Livre("9782416000188", "Programmer en Java", BigDecimal.valueOf(38.00));
         Livre livrePoo = new Livre("9782212118261", "S'initier à la POO", BigDecimal.valueOf(22.25));
 
-        service.addAuteur(claudeDelanoy, livreJava);
-        service.addAuteur(claudeDelanoy, livrePoo);
+        service.saveOrMajAuteur(claudeDelanoy, livreJava);
+        service.saveOrMajAuteur(claudeDelanoy, livrePoo);
 
         Auteur raphaelGotter = new Auteur("g.raphael@aston.fr", "Raphaël", "Goetter", LocalDate.of(1976, Month.JANUARY, 2));
         Livre livreCss = new Livre("9782212143638", "CSS 3 Flexbox", BigDecimal.valueOf(19.90));
-        service.addAuteur(raphaelGotter, livreCss);
+        service.saveOrMajAuteur(raphaelGotter, livreCss);
     }
 
     @BeforeAll
@@ -62,7 +62,7 @@ class IAuteurServiceTest {
 
     @Test
     public void testInject() {
-        //assertNotNull(service);
+        assertNotNull(service);
     }
 
     @Test
@@ -78,7 +78,15 @@ class IAuteurServiceTest {
     }
 
     @Test
-    void addAuteur() {
+    void saveOrMajAuteur() {
+        Auteur auteur = service.findAuteur(1);
+        auteur.setNom("goncalves");
+        auteur.setPrenom("antonio");
+        auteur.setEmail("g.antonio@aston.fr");
+
+        Livre livre = new Livre("9782212120387", "Java EE 5", BigDecimal.valueOf(34.15));
+        service.saveOrMajAuteur(auteur, livre);
+        assertEquals(livre.getTitre(),"Java EE 5");
     }
 
     @Test
@@ -89,7 +97,7 @@ class IAuteurServiceTest {
 
     @Test
     void testFindAuteurByPrenomAndNom() {
-        Auteur auteur = service.findAuteur("claude","delanoy");
+        Auteur auteur = service.findAuteur("claude", "delanoy");
         assertEquals(auteur.getEmail(), "d.claude@aston.fr");
     }
 
@@ -99,6 +107,7 @@ class IAuteurServiceTest {
 
     @Test
     void deleteAuteur() {
+
     }
 
     @AfterAll

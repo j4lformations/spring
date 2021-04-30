@@ -47,12 +47,12 @@ public class AuteurService implements IAuteurService {
     @Override
     @Transactional(readOnly = true)
     public Auteur findAuteur(String prenom, String nom) {
-        return auteurRepository.findByPrenomAndNom(prenom,nom);
+        return auteurRepository.findByPrenomAndNom(prenom, nom);
     }
 
     @Override
     @Transactional
-    public Auteur addAuteur(Auteur auteur, Livre livre) {
+    public void saveOrMajAuteur(Auteur auteur, Livre livre) {
         if (!allAuteurs().contains(auteur)) {
             Livre livreBdd = livreRepository.findByIsbn(livre.getIsbn());
             if (livreBdd != null) {
@@ -61,21 +61,15 @@ public class AuteurService implements IAuteurService {
                 livre = livreRepository.save(livre);
                 auteur.addLivre(livre);
             }
-            auteur = auteurRepository.save(auteur);
+            auteurRepository.save(auteur);
         } else {
             auteur = auteurRepository.findByEmail(auteur.getEmail());
             if (!auteur.getLivres().contains(livre)) {
                 livre = livreRepository.save(livre);
                 auteur.addLivre(livre);
-                auteur = auteurRepository.save(auteur);
+                auteurRepository.save(auteur);
             }
         }
-        return auteur;
-    }
-
-    @Override
-    public Auteur updateAuteur(Auteur auteur, Livre livre) {
-        return null;
     }
 
     @Override
