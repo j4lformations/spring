@@ -20,7 +20,6 @@
             <property name="hibernate.jdbc.fetch_size" value="50"/>
             <property name="hibernate.enable_lazy_load_no_trans" value="true"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
-
         </properties>
     </persistence-unit>
 </persistence>
