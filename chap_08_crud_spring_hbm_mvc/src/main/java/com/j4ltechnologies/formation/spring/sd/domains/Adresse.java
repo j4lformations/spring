@@ -18,6 +18,13 @@ public class Adresse {
     private Integer id;
     private String libelle;
 
+    public Adresse(String libelle) {
+        this.libelle = libelle;
+    }
+
+    public Adresse() {
+    }
+
     public Integer getId() {
         return id;
     }

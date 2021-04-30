@@ -16,12 +16,13 @@ public class Client {
     private String prenom;
     private String email;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Adresse adresse;
 
     public Client(String prenom, String email) {
         this.prenom = prenom;
         this.email = email;
+        adresse = new Adresse();
     }
 
     public Client() {
@@ -49,5 +50,13 @@ public class Client {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Adresse getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(Adresse adresse) {
+        this.adresse = adresse;
     }
 }

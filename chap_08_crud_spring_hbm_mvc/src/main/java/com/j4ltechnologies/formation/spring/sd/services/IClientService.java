@@ -1,4 +1,4 @@
-package com.j4ltechnologies.formation.spring.sd.domains.services;
+package com.j4ltechnologies.formation.spring.sd.services;
 
 import com.j4ltechnologies.formation.spring.sd.domains.Client;
 
@@ -11,7 +11,12 @@ import java.util.List;
  * @version 1.0 du 30/04/2021
  */
 public interface IClientService {
+
+    Client addClient(Client client);
+
     List<Client> allClients();
+
     Client findClientByid(Integer id);
+
     Client findClientByEmail(String email);
 }

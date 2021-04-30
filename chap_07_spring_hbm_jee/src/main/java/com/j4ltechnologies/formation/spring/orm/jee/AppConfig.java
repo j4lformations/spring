@@ -4,6 +4,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan("com.j4ltechnologies.formation.spring.orm.jee")
+@ComponentScan
 public class AppConfig {
 }

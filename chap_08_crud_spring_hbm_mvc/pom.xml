@@ -9,10 +9,10 @@
         <version>1.0</version>
     </parent>
     <artifactId>chap_08_crud_spring_hbm_mvc</artifactId>
-    <packaging>war</packaging>
-    <properties>
-        <failOnMissingWebXml>false</failOnMissingWebXml>
-    </properties>
+<!--    <packaging>war</packaging>-->
+<!--    <properties>-->
+<!--        <failOnMissingWebXml>false</failOnMissingWebXml>-->
+<!--    </properties>-->
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -30,6 +30,8 @@
             <version>${spring-framework.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!--SPRING-DATA-->
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
@@ -52,7 +54,7 @@
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
+            <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
