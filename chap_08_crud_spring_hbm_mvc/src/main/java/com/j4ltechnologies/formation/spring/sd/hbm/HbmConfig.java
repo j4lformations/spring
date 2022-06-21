@@ -17,6 +17,7 @@ import javax.persistence.EntityManagerFactory;
  */
 @Configuration
 @EnableJpaRepositories(basePackages = {"com.j4ltechnologies.formation.spring.sd"})
+@EnableTransactionManagement
 public class HbmConfig {
 
     @Bean

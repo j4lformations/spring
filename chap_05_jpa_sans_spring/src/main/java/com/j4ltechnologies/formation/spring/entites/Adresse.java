@@ -13,7 +13,6 @@ public class Adresse extends AbstractEntity{
 //	private Set<Artiste> artistes;
 
 	public Adresse() {
-
 	}
 
 	public Adresse(String libelle) {

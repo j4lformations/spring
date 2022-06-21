@@ -1,6 +1,7 @@
 package com.j4ltechnologies.formation.spring.orm.jee.domains;
 
 import com.j4ltechnologies.formation.spring.orm.jee.utils.AppUtils;
+
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.lang.NonNull;

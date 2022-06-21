@@ -19,7 +19,7 @@
             <property name="hibernate.jdbc.batch_size" value="10"/>
             <property name="hibernate.jdbc.fetch_size" value="50"/>
             <property name="hibernate.enable_lazy_load_no_trans" value="true"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDBDialect"/>
         </properties>
     </persistence-unit>
 </persistence>

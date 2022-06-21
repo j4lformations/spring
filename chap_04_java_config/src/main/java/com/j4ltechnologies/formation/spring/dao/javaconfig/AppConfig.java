@@ -12,7 +12,7 @@ public class AppConfig {
 
 	@Bean
 	public Compte getCompte() {
-		Compte compte = new Compte(12, "Loudjair", 4500.);
+		Compte compte = new Compte(12, "Joachim", 4500.);
 		return compte;
 	}
 }

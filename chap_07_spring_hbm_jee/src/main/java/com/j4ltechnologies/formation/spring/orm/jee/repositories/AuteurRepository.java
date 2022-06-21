@@ -2,6 +2,7 @@ package com.j4ltechnologies.formation.spring.orm.jee.repositories;
 
 import com.j4ltechnologies.formation.spring.orm.jee.domains.Auteur;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  * Classe AuteurRepository, créée le 29/04/2021 à 12:47

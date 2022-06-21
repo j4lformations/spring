@@ -3,6 +3,7 @@ package com.j4ltechnologies.formation.spring.orm.jee.services;
 import com.j4ltechnologies.formation.spring.orm.jee.AppConfig;
 import com.j4ltechnologies.formation.spring.orm.jee.domains.Auteur;
 import com.j4ltechnologies.formation.spring.orm.jee.domains.Livre;
+
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,12 +11,12 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import javax.persistence.Persistence;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Month;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * Classe IAuteurServiceTest, créée le 29/04/2021 à 14:56

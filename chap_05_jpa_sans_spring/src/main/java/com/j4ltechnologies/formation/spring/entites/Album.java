@@ -1,6 +1,7 @@
 package com.j4ltechnologies.formation.spring.entites;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,7 @@ public class Album extends AbstractEntity{
 	private List<Artiste> artistes;
 
 	public Album() {
+		this.artistes = new ArrayList<>();
 	}
 
 	public String getTitre() {
