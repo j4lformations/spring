@@ -17,16 +17,18 @@ import lombok.experimental.FieldDefaults;
 @Entity
 @Getter
 @Setter
-@EqualsAndHashCode(of = {"prenom"})
+@EqualsAndHashCode(of = { "prenom" })
 @ToString
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@NoArgsConstructor
 public class Employe {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
-    String prenom;
 
-    public Employe() {
-    }
+	@NonNull
+	Integer id;
+	
+	@NonNull
+	String prenom;
 }

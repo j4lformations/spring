@@ -41,7 +41,7 @@ public class AuteurService implements IAuteurService {
     @Override
     @Transactional(readOnly = true)
     public Auteur findAuteur(Integer id) {
-        return auteurRepository.getById(id);
+        return auteurRepository.getReferenceById(id);
     }
 
     @Override

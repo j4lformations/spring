@@ -1,11 +1,10 @@
 package com.j4ltechnologies.formation.spring.orm.jee.domains;
 
-
 import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
-
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -16,21 +15,19 @@ import java.time.LocalDateTime;
  * @author Joachim Zadi
  * @version 1.0 du 29/04/2021
  */
+@Getter
+@Setter
 @MappedSuperclass
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class BaseEntity {
 
-    @Id
-    @Getter
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@NonNull
+	Integer id;
 
-    @Getter
-    @Version
-    int version;
+	@Version
+	int version;
 
-    @Getter
-    @Setter
-    LocalDateTime createdAt;
-
+	LocalDateTime createdAt;
 }

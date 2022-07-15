@@ -20,55 +20,101 @@ import java.util.List;
  */
 
 @Entity
-@Getter
-@Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @RequiredArgsConstructor
-@EqualsAndHashCode(of = {"email"}, callSuper = false)
+@EqualsAndHashCode(of = { "email" }, callSuper = false)
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@ToString
 public class Auteur extends BaseEntity {
 
-    @NonNull
-    @Column(unique = true)
-    String email;
+	@Column(unique = true)
+	@NonNull
+	String email;
 
-    @NonNull
-    @Column(nullable = false)
-    String prenom;
+	@Column(nullable = false)
+	@NonNull
+	String prenom;
 
-    @NonNull
-    @Column(nullable = false)
-    String nom;
+	@Column(nullable = false)
+	@NonNull
+	String nom;
 
-    @NonNull
-    LocalDate ddn;
+	@NonNull
+	LocalDate ddn;
 
-    @Transient
-    int age;
+	@Transient
+	int age;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    List<Livre> livres;
+	@ManyToMany(fetch = FetchType.EAGER)
+	List<Livre> livres;
 
-    public void addLivre(Livre livre) {
-        if (livres == null) {
-            livres = new ArrayList<>();
-        }
-        if (!livres.contains(livre)) {
-            livres.add(livre);
-        }
-    }
+	public void addLivre(Livre livre) {
+		if (livres == null) {
+			livres = new ArrayList<>();
+		}
+		if (!livres.contains(livre)) {
+			livres.add(livre);
+		}
+	}
 
-    @PrePersist
-    private void beforePersist() {
-        setCreatedAt(LocalDateTime.now());
-        email = email.trim().toLowerCase();
-        prenom = AppUtils.capitalize(prenom);
-        nom = nom.trim().toUpperCase();
-    }
+	@PrePersist
+	private void beforePersist() {
+		setCreatedAt(LocalDateTime.now());
+		email = email.trim().toLowerCase();
+		prenom = AppUtils.capitalize(prenom);
+		nom = nom.trim().toUpperCase();
+	}
 
-    @PostLoad
-    private void postLoad() {
-        age = AppUtils.calculeAge(ddn);
-    }
+	@PostLoad
+	private void postLoad() {
+		age = AppUtils.calculeAge(ddn);
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public LocalDate getDdn() {
+		return ddn;
+	}
+
+	public void setDdn(LocalDate ddn) {
+		this.ddn = ddn;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public List<Livre> getLivres() {
+		return livres;
+	}
+
+	public void setLivres(List<Livre> livres) {
+		this.livres = livres;
+	}
 }

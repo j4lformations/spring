@@ -11,5 +11,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 
 public interface LivreRepository extends JpaRepository<Livre, Integer> {
-    Livre findByIsbn(String isbn);
+	Livre findByIsbn(String isbn);
 }

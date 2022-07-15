@@ -24,6 +24,7 @@ public class TestSpringHbm {
 			
 			System.out.println(joachim);
 			System.out.println(ludovic);
+			System.out.println(service.allEmployes());
 		}		
 	}
 }

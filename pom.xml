@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.j4ltechnologies.formation.spring</groupId>
+    <groupId>com.j4ltechnologies</groupId>
     <artifactId>spring</artifactId>
     <version>1.0</version>
     <modules>
@@ -16,14 +16,15 @@
         <module>chap_05_jpa_sans_spring</module>
         <module>chap_06_spring_jpa_hbm</module>
         <module>chap_07_spring_hbm_jee</module>
-        <module>chap_08_crud_spring_hbm_mvc</module>
+        <module>chap_08_spring_mvc_jsp</module>
+        <module>chap_09_spring_mvc_thymeleaf</module>
     </modules>
 
     <packaging>pom</packaging>
 
     <properties>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -34,6 +35,11 @@
         <testng.version>7.6.0</testng.version>
         <junit.version>5.9.0-M1</junit.version>
         <lombok.version>1.18.24</lombok.version>
+        <h2.version>2.1.214</h2.version>
+        <thymeleaf.version>3.1.0.M2</thymeleaf.version>
+        <javax.servlet.version>4.0.1</javax.servlet.version>
+        <jetty.version>9.4.48.v20220622</jetty.version>
+        <tomcat-dbcp.version>10.1.0-M16</tomcat-dbcp.version>
     </properties>
 
 </project>

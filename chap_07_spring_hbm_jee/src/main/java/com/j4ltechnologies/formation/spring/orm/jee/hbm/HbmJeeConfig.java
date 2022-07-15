@@ -1,14 +1,17 @@
 package com.j4ltechnologies.formation.spring.orm.jee.hbm;
 
+
+
+import javax.persistence.EntityManagerFactory;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.persistence.EntityManagerFactory;
+
 
 /**
  * Classe HbmJeeConfig, créée le 29/04/2021 à 11:54
@@ -18,7 +21,7 @@ import javax.persistence.EntityManagerFactory;
  */
 
 @Configuration
-@EnableJpaRepositories(basePackages = {"com.j4ltechnologies.formation.spring.orm.jee"})
+@EnableJpaRepositories(basePackages = {"com.j4ltechnologies.formation.spring.orm.jee"}, enableDefaultTransactions = false)
 @EnableTransactionManagement
 public class HbmJeeConfig {
 
