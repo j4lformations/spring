@@ -28,7 +28,7 @@
             <version>${spring-data-jpa.version}</version>
         </dependency>
 
-        <!--DEPENDANCE POUR JPA >= 0-->
+        <!--DEPENDANCE POUR JPA >= 2-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
